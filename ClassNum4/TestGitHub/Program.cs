@@ -10,6 +10,7 @@ namespace TestGitHub
             Console.WriteLine("Hello, Arnur");
             Console.WriteLine("Salem, Arnur");
             Console.WriteLine("Extra line from VS");
+            Console.WriteLine("This is even better");
         }
     }
 }
