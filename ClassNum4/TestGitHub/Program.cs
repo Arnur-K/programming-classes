@@ -9,6 +9,7 @@ namespace TestGitHub
             Console.WriteLine("Privet, Arnur");
             Console.WriteLine("Hello, Arnur");
             Console.WriteLine("Salem, Arnur");
+            Console.WriteLine("Extra line from VS");
         }
     }
 }
