@@ -1,5 +1,5 @@
 ﻿using System;
-using Math;
+using Maths;
 
 namespace BasicMethods
 {
@@ -8,6 +8,11 @@ namespace BasicMethods
         static void Main(string[] args)
         {
             Console.WriteLine(MathUtilities.AreCoprime(5, 6));
+            var solutions = MathUtilities.SolveQuadratic(1, 0, 1);
+            foreach(var s in solutions)
+            {
+                Console.WriteLine(s);
+            }
         }
     }
 }
