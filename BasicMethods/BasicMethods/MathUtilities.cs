@@ -17,5 +17,19 @@ namespace Math
             }
             return true;
         }
+
+        public static int Gcd(int a, int b)
+        {
+            while (a != b)
+            {
+                if (a > b)
+                    a -= b;
+                else
+                    b -= a;
+            }
+            return a;
+        }
+
+        public static bool AreCoprime(int a, int b) => Gcd(a, b) == 1;
     }
 }
