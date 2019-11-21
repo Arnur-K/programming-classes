@@ -6,6 +6,33 @@ namespace Maths
 {
     public static class MathUtilities
     {
+        public enum tempConversion
+        {
+            FromCToF,
+            FromFToC
+        }
+        public static double ConvertTemp(double temp, tempConversion conversion = tempConversion.FromCToF)
+        {
+            //if (conversion == tempConversion.FromCToF)
+            //    return temp * 1.8 + 32;
+
+            //if (conversion == tempConversion.FromFToC)
+            //    return (temp - 32) / 1.8;
+
+            //throw new ArgumentException("Wrong conversion");
+
+            switch(conversion)
+            {
+                case tempConversion.FromCToF:
+                    return temp * 1.8 + 32;
+                case tempConversion.FromFToC:
+                    return (temp - 32) / 1.8;
+                default:
+                    throw new ArgumentException("Wrong conversion");
+            }
+
+        }
+
         public static bool isPrime(int number)
         {
             if(number < 2)
