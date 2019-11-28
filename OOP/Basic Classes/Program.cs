@@ -8,9 +8,9 @@ namespace Basic_Classes
         {
             Person p1 = new Person("John", "Doe", 20);
             Person p2 = new Person("Ann", "Doe", 25);
-            Console.WriteLine($"{p1.GetFirstName()} {p1.GetLastName()} {p1.GetAge()}");
-            p2.SetLastName("Grey");
-            Console.WriteLine($"{p2.GetFirstName()} {p2.GetLastName()} {p2.GetAge()}");
+            Console.WriteLine($"{p1.FirstName} {p1.LastName} {p1.Age}");
+            p2.LastName = "Grey";
+            Console.WriteLine($"{p2.FirstName} {p2.LastName} {p2.Age}");
         }
     }
     class Person
@@ -18,6 +18,29 @@ namespace Basic_Classes
          string firstName;
          string lastName;
          int age;
+
+        public string FirstName
+        {
+            get => firstName;
+            set
+            {
+                if (value == null)
+                    throw new ArgumentException("Ur face slapped");
+                firstName = value;
+            }
+        }
+
+        public string LastName
+        {
+            get => lastName;
+            set => lastName = value;
+        }
+
+        public int Age
+        {
+            get => age;
+        }
+
         public Person(string firstName, string lastName, int age)
         {
             this.firstName = firstName;
@@ -25,16 +48,6 @@ namespace Basic_Classes
             if (age < 0)
                 throw new ArgumentOutOfRangeException("Ur face slapped");
             this.age = age;
-        }
-        public string GetFirstName() => firstName;
-        public string GetLastName() => lastName;
-        public int GetAge() => age;
-
-        public void SetLastName(string newLastName)
-        {
-            if (newLastName == null)
-                throw new ArgumentException("Ur face slapped");
-            lastName = newLastName;
         }
     }
 }
