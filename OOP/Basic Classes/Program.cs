@@ -6,14 +6,9 @@ namespace Basic_Classes
     {
         static void Main(string[] args)
         {
-            Person p1 = new Person
-            {
-                age = 20,
-                firstName = " John",
-                lastName = "Doe"
-            };
+            Person p1 = new Person("John", "Doe", 20);
 
-            Console.WriteLine();
+            Console.WriteLine(p1.age);
         }
     }
     class Person
@@ -21,5 +16,11 @@ namespace Basic_Classes
         public string firstName;
         public string lastName;
         public int age;
+        public Person(string firstName, string lastName, int age)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+        }
     }
 }
