@@ -7,7 +7,10 @@ namespace Basic_Classes
         static void Main(string[] args)
         {
             Person p1 = new Person("John", "Doe", 20);
-            Console.WriteLine($"{p1.getAge()} {p1.getFirstName()} {p1.getLastName()}");
+            Person p2 = new Person("Ann", "Doe", 25);
+            Console.WriteLine($"{p1.GetFirstName()} {p1.GetLastName()} {p1.GetAge()}");
+            p2.SetLastName("Grey");
+            Console.WriteLine($"{p2.GetFirstName()} {p2.GetLastName()} {p2.GetAge()}");
         }
     }
     class Person
@@ -23,8 +26,15 @@ namespace Basic_Classes
                 throw new ArgumentOutOfRangeException("Ur face slapped");
             this.age = age;
         }
-        public string getFirstName() => firstName;
-        public string getLastName() => lastName;
-        public int getAge() => age;
+        public string GetFirstName() => firstName;
+        public string GetLastName() => lastName;
+        public int GetAge() => age;
+
+        public void SetLastName(string newLastName)
+        {
+            if (newLastName == null)
+                throw new ArgumentException("Ur face slapped");
+            lastName = newLastName;
+        }
     }
 }
