@@ -6,9 +6,14 @@ namespace Basic_Classes
     {
         static void Main(string[] args)
         {
-            Person p1 = new Person();
-            p1.age = 20;
-            Console.WriteLine(p1.age);
+            Person p1 = new Person
+            {
+                age = 20,
+                firstName = " John",
+                lastName = "Doe"
+            };
+
+            Console.WriteLine();
         }
     }
     class Person
