@@ -6,6 +6,7 @@ namespace Basic_Classes
 {
     class Car
     {
+        private static int CarsCreated;
         private string _brand = "";
         private int _tankCapacity;
         private double _currentFuelLevel;
@@ -19,7 +20,10 @@ namespace Basic_Classes
             _brand = brand;
             _tankCapacity = tankCapacity;
             _consumption = consumption;
+            CarsCreated++;
         }
+
+
 
         public string Brand => _brand;
         public int TankCapacity => _tankCapacity;
@@ -53,6 +57,9 @@ namespace Basic_Classes
                 _tripKm += howFarIsPossible;
                 _currentFuelLevel = 0;
             }
+
+            
         }
+        public static int CarsAmount() => CarsCreated;
     }
 }

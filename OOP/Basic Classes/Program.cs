@@ -15,8 +15,14 @@ namespace Basic_Classes
             Console.WriteLine(p1.GetFullName);
             Console.WriteLine(p1.IsAdult);*/
 
+            Car c2 = new Car("ad", 100, 5);
+
+            Console.WriteLine(Car.CarsAmount());
 
             Car c1 = new Car("Waz", 100, 5);
+
+            
+
             Console.WriteLine($"{c1.Brand}, {c1.TankCapacity}, {c1.Consumption}");
             c1.Tank(50);
             Console.WriteLine($"Fuel level is  {c1.CurrentFuelLevel}");
@@ -25,6 +31,8 @@ namespace Basic_Classes
             c1.Drive(20);
 
             Console.WriteLine($"Fuel level is {c1.CurrentFuelLevel} kms {c1.TotalKm}");
+
+            Console.WriteLine(Car.CarsAmount());
         }
     }
     class Person
