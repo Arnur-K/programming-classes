@@ -6,11 +6,34 @@ namespace LinqFeatures
 {
     class Program
     {
+
+        public class Vector
+        {
+            public double X { get; set; }
+            public double Y { get; set; }
+
+            public Vector() { }
+
+            public Vector(int x, int y)
+            {
+                X = x;
+                Y = y;
+            }
+            public override string ToString() => $"[{X}, {Y}]";
+        }
+
         static void Main(string[] args)
         {
             //ArrayOfInts();
+            //ListOfStrings();
+            Vector v1 = new Vector(3, 4);
+            Console.WriteLine(v1.ToString());
+        }
+
+        private static void ListOfStrings()
+        {
             var names = new List<string>
-            { "John", "Doe", "Petya", "Chy"};
+            { "John", "Doe", "Petya", "Chy", "Ana", "Eve", "Alexa"};
 
             var sortByAlphabetically = names.OrderBy(x => x);
 
@@ -19,9 +42,20 @@ namespace LinqFeatures
             var fromTheLongestToLowest = names.OrderByDescending(x => x.Length);
 
             var funnySort = names.OrderBy(x => x.Last());
-            
 
+            var groupedWithLength = names
+                .GroupBy(x => x.Length)
+                .OrderByDescending(x => x.Key);
 
+            foreach (var i in groupedWithLength)
+            {
+                Console.WriteLine(i.Key);
+                Console.WriteLine("-----------------");
+                foreach (var j in i)
+                {
+                    Console.WriteLine(j);
+                }
+            }
         }
 
         private static void ArrayOfInts()
