@@ -39,5 +39,10 @@ namespace Geometry
         }
 
         public virtual double Distance() => Math.Sqrt(_x * _x + _y * _y);
+
+        public override string ToString()
+        {
+            return $"({_x}, {_y})";
+        }
     }
 }

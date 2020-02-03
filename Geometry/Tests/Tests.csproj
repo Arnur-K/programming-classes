@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Geometry\Geometry.csproj" />
+    <ProjectReference Include="..\Utilities1\Utilities1.csproj" />
+  </ItemGroup>
+
+</Project>
